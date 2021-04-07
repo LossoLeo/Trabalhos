@@ -1,0 +1,89 @@
+<!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>-->
+
+<tr>
+<td>
+<p>Data: <input type="text" id="calendario" /></p>
+</td>
+</tr>
+
+<!--
+<script>
+$(function() {
+    $("#calendario").datepicker({
+    	dateFormat: 'dd-mm-yy',
+    	changeMonth: true,
+        changeYear: true,
+    	showOtherMonths: true,
+        selectOtherMonths: true,
+    	numberOfMonths: 3,
+    	dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'],
+        dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+        dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+        monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+        monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']});
+});
+</script>
+-->
+</body>
+
+======================================================================================================
+<link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+<script src='fullcalendar/lib/jquery.min.js'></script>
+<script src='fullcalendar/lib/moment.min.js'></script>
+<script src='fullcalendar/fullcalendar.js'></script>
+
+ <script>
+       $(document).ready(function() {	
+           	
+            //CARREGA CALENDÁRIO E EVENTOS DO BANCO
+            $('#calendario').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                defaultDate: '2016-01-12',
+                editable: true,
+                eventLimit: true, 
+                events: 'eventos.php',           
+                eventColor: '#dd6777'
+            });	
+            
+            //CADASTRA NOVO EVENTO
+            $('#novo_evento').submit(function(){
+                //serialize() junta todos os dados do form e deixa pronto pra ser enviado pelo ajax
+                var dados = jQuery(this).serialize();
+                $.ajax({
+                    type: "POST",
+                    url: "cadastrar_evento.php",
+                    data: dados,
+                    success: function(data)
+                    {   
+                        if(data == "1"){
+                            alert("Cadastrado com sucesso! ");
+                            //atualiza a página!
+                            location.reload();
+                        }else{
+                            alert("Houve algum problema.. ");
+                        }
+                    }
+                });                
+                return false;
+            });	
+	   }); 
+                
+    </script>
+
+
+<!-- Esse comando aqui, cria um evento em uma determinada data, e salva no banco o que irá acontecer naquela data
+<div id='calendario'>
+        	<br/>
+        	<form id="novo_evento" action="" method="post">
+            		Nome do Evento: <input type="text" name="nome" required/><br/><br/>            
+            		Data do Evento: <input type="date" name="data" required/><br/><br/>            
+            		<button type="submit"> Cadastrar novo evento </button>
+        	</form>
+    </div>
+    	-->

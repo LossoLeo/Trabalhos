@@ -1,0 +1,117 @@
+<style>
+
+	@font-face {
+		
+    	font-family: maagkramp;
+     	src: url("../fonts/maagkramp.ttf");
+	}
+
+
+
+	body {
+			
+			font:100% maagkramp, Sans-serif;
+
+	background: rgb(0,236,255);
+	background: radial-gradient(circle, rgba(0,236,255,0.4654236694677871) 0%, rgba(82,255,87,0.6278886554621849) 44%, rgba(1,58,73,0.7511379551820728) 100%);
+		background-image: url("../images/MEDICINE.png");
+		background-position: center;
+		background-attachment: fixed;
+		background-size: cover;
+		/*font-family: "maagkramp";*/
+	}
+
+	table {
+		
+		margin-bottom: 1%;
+		background-color: rgba(255,255,255,0.3);
+		padding: 0%;
+		padding-left: 1%;
+		padding-right: 1%;
+		padding-bottom: 0%;
+
+			
+		box-shadow: 5px 5px 15px 0px black;
+		border-radius: 1%;
+
+		border: none;
+    	
+	}    
+
+ 	td {
+
+ 		border: none;
+ 	}
+
+ 	input {
+
+ 		background-color: rgba(255,255,255,0.7);
+ 		box-shadow: 5px 5px 15px 0px darkgray;
+ 		width: 100%;
+ 		border: 1%;
+ 		padding-top: 3%;
+ 		padding-bottom: 3%;
+ 		text-indent: 3%;
+
+ 	}
+
+ 	a{
+ 		text-decoration: underline;
+ 		color: #000000;
+ 	}
+
+ 	button {
+
+ 		background-color: rgba(255,255,255,0.7);
+ 		padding-top: 5%;
+ 		padding-bottom: 5%;
+ 		width: 100%;
+ 		text-indent: 5%;
+ 			
+ 		font:100% Harbinger-Caps, Sans serif;
+ 		box-shadow: 5px 5px 15px 0px darkgray;
+
+ 	}
+
+ 	h1 {
+
+ 		text-align: center;
+ 	}
+
+ 	h2 {
+
+ 		text-align: center;
+ 		font:100% Harbinger-Caps, Sans serif;
+ 	}
+
+ 	.h1R{
+
+ 		text-align: right;
+
+ 	}
+
+ 	.drop-down-select {
+
+   		 position: relative;
+   		 float: center;
+
+}
+ 
+	.drop-down-select select {
+
+   		width: 100%;
+  		background-color: rgba(255,255,255,0.7);
+ 		box-shadow: 5px 5px 15px 0px darkgray;
+ 		width: 100%;
+ 		border: 1%;
+ 		padding-top: 3%;
+ 		padding-bottom: 3%;
+ 		text-indent: 0%; 
+
+	}
+ 
+
+  
+
+
+ </style>
